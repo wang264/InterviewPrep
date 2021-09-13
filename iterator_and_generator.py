@@ -33,12 +33,15 @@ myiter = iter(myclass)
 print(next(myiter))
 print(next(myiter))
 
-for i in MyNumbers(start=1, max_size=10, step=2):
-    print(i)
+for idx, numb in enumerate(MyNumbers(start=1, max_size=100000000, step=2)):
+    print(idx)
+
+a = [x for x in range(1000000000) if x % 2 == 1]
 
 
 # generator
-# It is another way of creating iterators in a simple way where it uses the keyword “yield” instead of returning
+# It is another way of creating iterators in a simple way
+# where it uses the keyword “yield” instead of returning
 # it in a defined function.
 
 def sq_numbers(n):
@@ -55,3 +58,14 @@ print(next(a))
 
 for i in sq_numbers(6):
     print(i)
+
+mytuple = ("apple", "banana", "cherry")
+myit = iter(mytuple)
+print(myit)
+
+print(next(myit))
+print(next(myit))
+print(next(myit))
+
+for fruit in mytuple:
+    print(fruit)
